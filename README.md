@@ -4,7 +4,7 @@ Solutions to Advent of Code 2025
 Day | <span style="color:green">Part 1</span> | <span style="color:red">Part 2</span>
 ---|---|---
 1 | <span style="color:yellow">&star;</span> | <span style="color:yellow">&star;</span>
-2 | |
+2 | <span style="color:yellow">&star;</span> | <span style="color:yellow">&star;</span>
 3 | |
 4 | |
 5 | |
