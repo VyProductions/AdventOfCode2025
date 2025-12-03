@@ -15,7 +15,7 @@ all: clean Part1 Part2
 
 	@xxd actual.txt
 	@xxd expected.txt
-	@diff -y --color actual.txt expected.txt
+	-@diff -y --color actual.txt expected.txt
 
 Part1:
 	-@g++ Part1.cpp -o Part1 > compile.txt 2>&1
