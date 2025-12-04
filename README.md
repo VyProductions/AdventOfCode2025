@@ -6,7 +6,7 @@ Day | <span style="color:green">Part 1</span> | <span style="color:red">Part 2</
 1 | <span style="color:yellow">&star;</span> | <span style="color:yellow">&star;</span>
 2 | <span style="color:yellow">&star;</span> | <span style="color:yellow">&star;</span>
 3 | <span style="color:yellow">&star;</span> | <span style="color:yellow">&star;</span>
-4 | |
+4 | <span style="color:yellow">&star;</span> | <span style="color:yellow">&star;</span>
 5 | |
 6 | |
 7 | |
