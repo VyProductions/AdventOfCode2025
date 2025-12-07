@@ -9,7 +9,7 @@ Day | <span style="color:green">Part 1</span> | <span style="color:red">Part 2</
 4 | <span style="color:yellow">&star;</span> | <span style="color:yellow">&star;</span>
 5 | <span style="color:yellow">&star;</span> | <span style="color:yellow">&star;</span>
 6 | <span style="color:yellow">&star;</span> | <span style="color:yellow">&star;</span>
-7 | |
+7 | <span style="color:yellow">&star;</span> | <span style="color:yellow">&star;</span>
 8 | |
 9 | |
 10 | |
