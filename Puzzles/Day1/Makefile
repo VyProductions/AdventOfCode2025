@@ -18,11 +18,11 @@ all: clean Part1 Part2
 	-@diff -y --color actual.txt expected.txt
 
 Part1:
-	-@g++ Part1.cpp -o Part1 > compile.txt 2>&1
+	-@g++ -std=c++20 Part1.cpp -o Part1 > compile.txt 2>&1
 
 Part2:
 	@printf " ------ " >> compile.txt
-	-@g++ Part2.cpp -o Part2 >> compile.txt 2>&1
+	-@g++ -std=c++20 Part2.cpp -o Part2 >> compile.txt 2>&1
 
 clean:
 	@rm -f *.exe compile.txt actual.txt
