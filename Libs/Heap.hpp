@@ -9,6 +9,7 @@ template <class T, bool (*Comp)(const T&, const T&) = nullptr>
 class Heap {
 public:
     using value_type = T;
+    using size_type = size_t;
 
     static bool CompLess(const value_type& a, const value_type& b) { return a < b; }
     static bool CompGreater(const value_type& a, const value_type& b) { return a > b; }
@@ -24,7 +25,7 @@ public:
             m_data.push_back(val);
         }
 
-        for (size_t i = m_data.size() - 1; i < m_data.size(); --i) {
+        for (size_type i = m_data.size() - 1; i < m_data.size(); --i) {
             BubbleDown(i);
         }
     }
@@ -50,6 +51,9 @@ public:
 
         return value;
     }
+
+    size_type size() const { return m_data.size(); }
+    bool empty() const { return m_data.empty(); }
 protected:
     static bool Compare(const T& a, const T& b) {
         if constexpr (Comp) {
@@ -59,24 +63,24 @@ protected:
         }
     }
 
-    size_t Parent(size_t child) { return (child - 1) / 2; }
-    size_t LIdx(size_t parent) { return parent * 2 + 1; }
-    size_t RIdx(size_t parent) { return parent * 2 + 2; }
+    size_type Parent(size_type child) { return (child - 1) / 2; }
+    size_type LIdx(size_type parent) { return parent * 2 + 1; }
+    size_type RIdx(size_type parent) { return parent * 2 + 2; }
     
-    void Swap(size_t aIdx, size_t bIdx) {
+    void Swap(size_type aIdx, size_type bIdx) {
         value_type tmp = std::move(m_data.at(aIdx));
         m_data.at(aIdx) = std::move(m_data.at(bIdx));
         m_data.at(bIdx) = std::move(tmp);
     }
 
-    void BubbleUp(size_t start) {
+    void BubbleUp(size_type start) {
         // already at root
         if (start == 0) {
             return;
         }
         
-        size_t next_idx = start;
-        size_t parent = Parent(start);
+        size_type next_idx = start;
+        size_type parent = Parent(start);
 
         if (!Compare(m_data.at(parent), m_data.at(start))) {
             Swap(start, parent);
@@ -88,16 +92,16 @@ protected:
         }
     }
 
-    void BubbleDown(size_t start) {
-        size_t next_idx = start;
-        size_t lIdx = LIdx(start);
+    void BubbleDown(size_type start) {
+        size_type next_idx = start;
+        size_type lIdx = LIdx(start);
         
         // no L or R child
         if (lIdx >= m_data.size()) {
             return;
         }
 
-        size_t rIdx = RIdx(start);
+        size_type rIdx = RIdx(start);
 
         // no R child
         if (rIdx >= m_data.size()) {
